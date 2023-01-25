@@ -20,5 +20,16 @@ add.addEventListener("click", (e) => {
   //再來要appen到section裡面
   a_div.appendChild(a_pragraph);
   a_div.appendChild(a_time);
+
+  //新增icon 在JS裡做
+  let checkIcon = document.createElement("button");
+  checkIcon.classList.add("check");
+  checkIcon.innerHTML = '<i class="fa-solid fa-check"></i>'; //這裡要放一個字串
+  let trashIcon = document.createElement("button");
+  trashIcon.classList.add("trash");
+  trashIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  a_div.appendChild(checkIcon);
+  a_div.appendChild(trashIcon);
+  a_div.style.animation = "scaleUp 0.5s forwards";
   section.appendChild(a_div);
 });

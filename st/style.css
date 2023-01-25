@@ -64,6 +64,43 @@ section div.todo {
 section p {
   background-color: rgba(83, 105, 86, 0.5);
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 0.25rem 0.5rem;
+}
+section p.todoList {
+  width: 60%;
+}
+section p.todoTime {
+  width: 25%;
+  text-align: center;
+}
+section button {
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+section button.check {
+  background-color: #ee7905;
+}
+section button.trash {
+  background-color: #d94156;
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=style.css.map */
