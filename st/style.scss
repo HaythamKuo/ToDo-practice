@@ -48,3 +48,22 @@ form {
     cursor: crosshair; //cursor是讓游標在一個item上 顯示什麼類型的游標
   }
 }
+//div.todo  p.todoList  p.todoTime
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    display: flex;
+    width: 50vw;
+    align-items: center;
+    margin: 0.25rem 0rem;
+  }
+  p {
+    background-color: rgba(83, 105, 86, 0.5);
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
