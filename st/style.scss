@@ -3,3 +3,48 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+header {
+  height: 20vh; //這裡的20vh是讓header與其他區塊有一定距離 並非針對h1設定
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+  }
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input,
+  button {
+    border: none;
+    padding: 0.5rem 0.5rem; //讓輸入框內容變寬變長
+    font-size: 1.5rem;
+    margin: 0.25rem; //讓輸入框有間隔
+  }
+  input[type="number"] {
+    //針對輸入框是數字的框框做設定
+    width: 87px;
+    text-align: center;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  button {
+    background-color: rgba(204, 221, 211, 0.32);
+    color: rgb(24, 27, 98);
+    cursor: crosshair; //cursor是讓游標在一個item上 顯示什麼類型的游標
+  }
+}
