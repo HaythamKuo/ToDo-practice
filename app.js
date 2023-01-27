@@ -29,9 +29,17 @@ add.addEventListener("click", (e) => {
     let doItem = e.target.parentElement;
     doItem.classList.toggle("done");
   });
+
   let trashIcon = document.createElement("button");
   trashIcon.classList.add("trash");
   trashIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  trashIcon.addEventListener("click", (k) => {
+    let trashItem = k.target.parentElement;
+    trashItem.addEventListener("animationend", (e) => {
+      trashItem.remove();
+    });
+    trashItem.style.animation = "scaleDown 0.5s forwards";
+  });
   a_div.appendChild(checkIcon);
   a_div.appendChild(trashIcon);
   a_div.style.animation = "scaleUp 0.5s forwards";
