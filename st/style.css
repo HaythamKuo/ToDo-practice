@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+i {
+  pointer-events: none;
+}
+
 body {
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
 }
@@ -60,6 +64,7 @@ section div.todo {
   width: 50vw;
   align-items: center;
   margin: 0.25rem 0rem;
+  transition: all 0.1s ease;
 }
 section p {
   background-color: rgba(83, 105, 86, 0.5);
@@ -85,6 +90,11 @@ section button.check {
 }
 section button.trash {
   background-color: #d94156;
+}
+section .done {
+  opacity: 0.6;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.3rem;
 }
 
 @-webkit-keyframes scaleUp {

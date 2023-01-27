@@ -25,6 +25,10 @@ add.addEventListener("click", (e) => {
   let checkIcon = document.createElement("button");
   checkIcon.classList.add("check");
   checkIcon.innerHTML = '<i class="fa-solid fa-check"></i>'; //這裡要放一個字串
+  checkIcon.addEventListener("click", (e) => {
+    let doItem = e.target.parentElement;
+    doItem.classList.toggle("done");
+  });
   let trashIcon = document.createElement("button");
   trashIcon.classList.add("trash");
   trashIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
