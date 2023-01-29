@@ -7,6 +7,11 @@ add.addEventListener("click", (e) => {
   let toDo = pForm.children[0].value; //我需要這個小孩索引第一個的值
   let toMonth = pForm.children[1].value;
   let toDay = pForm.children[2].value;
+
+  if (toDo === "" || toMonth === "" || toDay === "") {
+    alert("Please input some lists and dates.");
+    return;
+  }
   //create item
   let a_div = document.createElement("div");
   a_div.classList.add("todo");
@@ -35,7 +40,7 @@ add.addEventListener("click", (e) => {
   trashIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
   trashIcon.addEventListener("click", (k) => {
     let trashItem = k.target.parentElement;
-    trashItem.addEventListener("animationend", (e) => {
+    trashItem.addEventListener("animationend", () => {
       trashItem.remove();
     });
     trashItem.style.animation = "scaleDown 0.5s forwards";
@@ -43,5 +48,21 @@ add.addEventListener("click", (e) => {
   a_div.appendChild(checkIcon);
   a_div.appendChild(trashIcon);
   a_div.style.animation = "scaleUp 0.5s forwards";
+  //create object, need a name and value?
+  let my_list = {
+    toDo: toDo,
+    toMonth: toMonth,
+    toDay: toDay,
+  };
+  //set a local storage
+  let dailyToDO = localStorage.getItem("List");
+  if (dailyToDO == null) {
+    localStorage.setItem("List", JSON.stringify([my_list])); //我需要一個object放進去Array
+  } else {
+    let arrList = JSON.parse(dailyToDO);
+    arrList.push(my_list);
+    localStorage.setItem("List", JSON.stringify(arrList));
+  }
+  pForm.children[0].value = "";
   section.appendChild(a_div);
 });
